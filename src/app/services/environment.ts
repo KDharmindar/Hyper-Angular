@@ -1,5 +1,6 @@
 export const environment = {
     production: false,
-    alphaVantageApiKey: 'BPCYYEMYPBOWB8P6', // Replace with your API key
+    //alphaVantageApiKey: 'QEPFED6K9UNZCMCW', // Replace with your API key
+    alphaVantageApiKey: 'demo', // Replace with your API key
   };
   

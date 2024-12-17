@@ -107,6 +107,7 @@ import { PreloaderComponent } from './extrapages/preloader/preloader.component'
 import { LucideComponent } from './icons/lucide/lucide.component'
 import { DashboardComponent } from './dashboard/home/home.component'
 import { EarningsCalendarComponent } from '../components/earnings-calendar/earnings-calendar.component'
+import { RealTimeStockPricesComponent } from '../components/real-time-stock-prices/real-time-stock-prices.component'
 
 export const PAGE_ROUTES: Route[] = [
   // Dashboard
@@ -120,6 +121,11 @@ export const PAGE_ROUTES: Route[] = [
     path: 'earnings-calendar',
     component: EarningsCalendarComponent,
     data: {title : 'Earnings Calendar'},
+  },
+  {
+    path: 'real-time-stocks-prices',
+    component: RealTimeStockPricesComponent,
+    data: {title: 'Real Time Stocks Prices'},
   },
   {
     path: 'dashboard-home',
