@@ -61,6 +61,7 @@ export class EarningsCalendarComponent implements OnInit {
   async fetchEarningsData(): Promise<void> {
     try {
       this.earningsData = await this.stockService.fetchEarningsCalendar();
+      this.earningsData = this.earningsData.filter(earningData => (earningData as EarningsData).estimate > 0 );
       this.loading = false;
     } catch (error) {
       this.error = 'Failed to fetch earnings calendar data.';

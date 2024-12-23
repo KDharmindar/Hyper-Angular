@@ -39,6 +39,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@popperjs/core": "^2.11.8",
+    "@weavy/uikit-web": "^25.2.0",
     "angular-ng-stepper": "^2.0.0",
     "angularx-flatpickr": "^7.3.0",
     "apexcharts": "^3.49.2",

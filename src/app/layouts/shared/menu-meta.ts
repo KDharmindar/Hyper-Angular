@@ -1,61 +1,81 @@
 import { MenuItem } from './models/menu.model'
 
 export const MENU: MenuItem[] = [
-  {
-    key: 'navigation',
-    label: 'navigation',
-    isTitle: true,
-  },
+  // {
+  //   key: 'navigation',
+  //   label: 'navigation',
+  //   isTitle: true,
+  // },
   {
     key: 'dashboards',
     icon: 'uil-home-alt',
     label: 'dashboards',
-    collapsed: false,
-    badge: { variant: 'success', text: '5' },
-    subMenu: [
-      {
-        key: 'ds-analytics',
-        label: 'analytics',
-        link: '/dashboard-analytics',
-        parentKey: 'dashboards',
-      },
-      {
-        key: 'ds-ecommerce',
-        label: 'ecommerce',
-        link: '/',
-        parentKey: 'dashboards',
-      },
-      {
-        key: 'ds-project',
-        label: 'projects',
-        link: '/dashboard-projects',
-        parentKey: 'dashboards',
-      },
-      {
-        key: 'ds-crm',
-        label: 'crm',
-        link: '/dashboard-crm',
-        parentKey: 'dashboards',
-      },
-      {
-        key: 'ds-ewallet',
-        label: 'e-Wallet',
-        link: '/dashboard-wallet',
-        parentKey: 'dashboards',
-      },
-    ],
+    link:'/'
+    // collapsed: false,
+    // badge: { variant: 'success', text: '5' },
+    // subMenu: [
+    //   {
+    //     key: 'ds-analytics',
+    //     label: 'analytics',
+    //     link: '/dashboard-analytics',
+    //     parentKey: 'dashboards',
+    //   },
+    //   {
+    //     key: 'ds-ecommerce',
+    //     label: 'ecommerce',
+    //     link: '/',
+    //     parentKey: 'dashboards',
+    //   },
+    //   {
+    //     key: 'ds-project',
+    //     label: 'projects',
+    //     link: '/dashboard-projects',
+    //     parentKey: 'dashboards',
+    //   },
+    //   {
+    //     key: 'ds-crm',
+    //     label: 'crm',
+    //     link: '/dashboard-crm',
+    //     parentKey: 'dashboards',
+    //   },
+    //   {
+    //     key: 'ds-ewallet',
+    //     label: 'e-Wallet',
+    //     link: '/dashboard-wallet',
+    //     parentKey: 'dashboards',
+    //   },
+    // ],
   },
+  // {
+  //   key: 'apps',
+  //   label: 'apps',
+  //   isTitle: true,
+  // },
   {
-    key: 'apps',
-    label: 'apps',
-    isTitle: true,
-  },
-  {
-    key: 'apps-calendar',
+    key:'apps-earnings-calendar',
     icon: 'uil-calender',
-    label: 'calendar',
-    link: '/apps-calendar',
+    label: 'Earnings Calender',
+    link: '/earnings-calendar',
   },
+  {
+    key:'apps-real-time-stocks-prices',
+    icon: 'ri-pie-chart-box-line',
+    label: 'Real Time Stocks Prices',
+    link: '/real-time-stocks-prices',
+  },
+  {
+    key:'app-news-sentiment-analysis',
+    icon: 'ri-pie-chart-box-line',
+    label: 'Market Sentiment Analysis',
+    link: '/market-sentiment-analysis',
+  },
+  
+  // {
+  //   key: 'apps-calendar',
+  //   icon: 'uil-calender',
+  //   label: 'calendar',
+  //   link: '/apps-calendar',
+  // },
   {
     key: 'apps-chat',
     icon: 'uil-comments-alt',

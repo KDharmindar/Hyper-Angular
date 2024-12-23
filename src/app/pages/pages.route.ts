@@ -5,7 +5,7 @@ import { ProjectsComponent } from './dashboard/projects/projects.component'
 import { CrmComponent } from './dashboard/crm/crm.component'
 import { WalletComponent } from './dashboard/wallet/wallet.component'
 import { CalendarComponent } from './apps/calendar/calendar.component'
-import { ChatComponent } from './apps/chat/chat.component'
+//import { ChatComponent } from './apps/chat/chat.component'
 import CRMProjectsComponent from './crm/projects/projects.component'
 import { OrdersListComponent } from './crm/orders-list/orders-list.component'
 import { ClientsComponent } from './crm/clients/clients.component'
@@ -108,10 +108,15 @@ import { LucideComponent } from './icons/lucide/lucide.component'
 import { DashboardComponent } from './dashboard/home/home.component'
 import { EarningsCalendarComponent } from '../components/earnings-calendar/earnings-calendar.component'
 import { RealTimeStockPricesComponent } from '../components/real-time-stock-prices/real-time-stock-prices.component'
+import { MarketSentimentComponent } from '../components/news-sentiment-analysis/news-sentiment-analysis.component'
+import { WatchlistAlertsComponent } from '../components/watchlist-alerts/watchlist-alerts.component'
+import { LoginComponent } from '../account/login/login.component'
+import { RegistrationComponent } from '../components/registration/registration.component'
+import { ChatComponent } from '../components/chat/chat.component'
 
 export const PAGE_ROUTES: Route[] = [
   // Dashboard
-  { path: '', component: IndexComponent, data: { title: 'Dashboard' } },
+  //{ path: '', component: IndexComponent, data: { title: 'Dashboard' } },
   {
     path: 'dashboard-analytics',
     component: AnalyticsComponent,
@@ -128,7 +133,28 @@ export const PAGE_ROUTES: Route[] = [
     data: {title: 'Real Time Stocks Prices'},
   },
   {
-    path: 'dashboard-home',
+    path: 'market-sentiment-analysis',
+    component: MarketSentimentComponent,
+    data: {title: 'Market Sentiment Analysis'},
+  },
+  {
+    path: 'watchlist-alerts',
+    component: WatchlistAlertsComponent,
+    data: {title: 'Watchlist'},
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {title: 'Login'},
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
+    data: {title: 'Registration'},
+  },
+
+  {
+    path: '',
     component: DashboardComponent,
     data: { title: 'Dashboard' },
   },{
