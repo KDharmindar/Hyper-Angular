@@ -112,7 +112,7 @@ import { MarketSentimentComponent } from '../components/news-sentiment-analysis/
 import { WatchlistAlertsComponent } from '../components/watchlist-alerts/watchlist-alerts.component'
 import { LoginComponent } from '../account/login/login.component'
 import { RegistrationComponent } from '../components/registration/registration.component'
-import { ChatComponent } from '../components/chat/chat.component'
+
 
 export const PAGE_ROUTES: Route[] = [
   // Dashboard
@@ -175,7 +175,7 @@ export const PAGE_ROUTES: Route[] = [
     component: CalendarComponent,
     data: { title: 'Calendar' },
   },
-  { path: 'apps-chat', component: ChatComponent, data: { title: 'Chat' } },
+  
   {
     path: 'crm-projects',
     component: CRMProjectsComponent,
