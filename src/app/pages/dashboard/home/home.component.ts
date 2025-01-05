@@ -148,6 +148,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { StockService } from '../../../services/stock-data.service';
 import { EarningsCalendarComponent } from '@/app/components/earnings-calendar/earnings-calendar.component';
 import { Chart } from 'chart.js';
+import { environment } from '@/app/services/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -168,7 +169,7 @@ export class DashboardComponent implements OnInit {
   exchangeRates: { name: string; rate: number }[] = [];
   page = 1;
   historicalChart: any;
-  apiKey = 'BPCYYEMYPBOWB8P6';
+  apiKey = environment.alphaVantageApiKey;
   loading: boolean = true;
   stockPrice: any;
 
@@ -225,7 +226,7 @@ export class DashboardComponent implements OnInit {
       const response = await axios.get(`https://www.alphavantage.co/query`, {
         params: {
           function: 'REALTIME_BULK_QUOTES',
-          symbol: 'MSFT,AAPL,IBM',
+          symbol: 'MSFT,AAPL,IBM,GOOGL,AMZN,',
           apikey: this.apiKey,
         },
       });

@@ -8,7 +8,7 @@ export const routes: Routes = [
     component: PrivateLayoutComponent,
     loadChildren: () =>
       import('./pages/pages.route').then((mod) => mod.PAGE_ROUTES),
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   {
     path: '',

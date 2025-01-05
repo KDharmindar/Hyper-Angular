@@ -1,12 +1,15 @@
 import { CommonModule } from '@angular/common'
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
+import { AuthService } from '@/app/services/auth.service'
+import { user } from '@/app/models/user.model'
+import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-register-2',
   standalone: true,
-  imports: [CommonModule, AccountWrapper2Component, RouterModule],
+  imports: [CommonModule, AccountWrapper2Component, RouterModule, FormsModule],
   template: `
     <app-account-wrapper2>
       <div class="my-auto">
@@ -18,14 +21,28 @@ import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
         </p>
 
         <!-- form -->
-        <form action="#">
+        <form (ngSubmit)="onSubmit()" action="#">
           <div class="mb-3">
-            <label for="fullname" class="form-label">Full Name</label>
+            <label for="fullname" class="form-label">First Name</label>
             <input
               class="form-control"
               type="text"
-              id="fullname"
-              placeholder="Enter your name"
+              id="first_name"
+              name="first_name"
+              [(ngModel)] ="currentUser.first_name"
+              placeholder="Enter your first name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input
+              class="form-control"
+              type="text"
+              id="last_name"
+              name="last_name"
+              [(ngModel)] ="currentUser.last_name"
+              placeholder="Enter your last name"
               required
             />
           </div>
@@ -35,6 +52,8 @@ import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
               class="form-control"
               type="email"
               id="emailaddress"
+              [(ngModel)] ="currentUser.email"
+              name="emailaddress"
               required
               placeholder="Enter your email"
             />
@@ -46,6 +65,8 @@ import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
               type="password"
               required
               id="password"
+              name="password"
+              [(ngModel)] ="currentUser.password"
               placeholder="Enter your password"
             />
           </div>
@@ -120,4 +141,17 @@ import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
   `,
   styles: ``,
 })
-export class Register2Component {}
+export class Register2Component implements OnInit {
+  currentUser: user = new user();
+  constructor(private authService:AuthService) {
+    
+  }
+  
+  ngOnInit(): void {
+    
+  }
+
+  onSubmit():void {
+    this.authService.register(this.currentUser);
+  }
+}

@@ -52,6 +52,7 @@ export class TopbarComponent {
   languages: Language[] = []
   selectedLanguage?: Language
   element!: FullScreenTypes
+  first_name:string | null = null;
 
   store = inject(Store)
   render = inject(Renderer2)
@@ -60,7 +61,9 @@ export class TopbarComponent {
     @Inject(DOCUMENT) private document: Document & FullScreenTypes,
     public languageService: LanguageService,
     private elementRef: ElementRef
-  ) {}
+  ) {
+    this.first_name = localStorage.getItem('first_name');
+  }
   @Output() settingsButtonClicked = new EventEmitter()
   @Output() mobileMenuButtonClicked = new EventEmitter()
 

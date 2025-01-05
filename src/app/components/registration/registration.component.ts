@@ -30,16 +30,16 @@ export class RegistrationComponent {
   }
 
   onSubmit(): void {
-    this.authService.register(this.registrationForm.value).subscribe(
-      (response) => {
-        this.successMessage = 'Registration successful!';
-        this.errorMessage = '';
-        this.registrationForm.reset();
-      },
-      (error) => {
-        this.errorMessage = 'Registration failed. Try again.';
-        this.successMessage = '';
-      }
-    );
+    // this.authService.register(this.registrationForm.value).subscribe(
+    //   (response) => {
+    //     this.successMessage = 'Registration successful!';
+    //     this.errorMessage = '';
+    //     this.registrationForm.reset();
+    //   },
+    //   (error) => {
+    //     this.errorMessage = 'Registration failed. Try again.';
+    //     this.successMessage = '';
+    //   }
+    // );
   }
 }

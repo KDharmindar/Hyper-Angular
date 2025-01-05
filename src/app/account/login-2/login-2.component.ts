@@ -1,12 +1,14 @@
+import { AuthService } from '@/app/services/auth.service';
 import { CommonModule } from '@angular/common'
 import { Component } from '@angular/core'
-import { RouterModule } from '@angular/router'
+import { RouterModule, Router } from '@angular/router'
 import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-2',
   standalone: true,
-  imports: [CommonModule, AccountWrapper2Component, RouterModule],
+  imports: [CommonModule, AccountWrapper2Component, RouterModule, FormsModule],
   template: `
     <app-account-wrapper2>
       <div class="my-auto">
@@ -17,14 +19,16 @@ import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
         </p>
 
         <!-- form -->
-        <form action="#">
+        <form (ngSubmit)="login()">
           <div class="mb-3">
             <label for="emailaddress" class="form-label">Email address</label>
             <input
               class="form-control"
               type="email"
               id="emailaddress"
-              required=""
+              name="emailaddress"
+              [(ngModel)]="email"
+              required
               placeholder="Enter your email"
             />
           </div>
@@ -36,8 +40,10 @@ import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
             <input
               class="form-control"
               type="password"
-              required=""
+              [(ngModel)]="pwd"
+              required
               id="password"
+              name="password"
               placeholder="Enter your password"
             />
           </div>
@@ -110,4 +116,14 @@ import { AccountWrapper2Component } from '@auth/account-wrapper2.component'
   `,
   styles: ``,
 })
-export class Login2Component {}
+export class Login2Component {
+  email:string = '';
+  pwd:string = '';
+  errorMessage:string | null = null;
+
+  constructor(private authService:AuthService, private router: Router) {}
+
+  login():void {
+    this.authService.login(this.email, this.pwd);
+  }
+}
