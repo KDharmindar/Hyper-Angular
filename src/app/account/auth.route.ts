@@ -17,12 +17,19 @@ import { MaintenanceComponent } from '../extrapage/maintenance/maintenance.compo
 import { LandingComponent } from '../extrapage/landing/landing.component'
 import { Error404Component } from '../extrapage/404/404.component'
 import { Error500Component } from '../extrapage/500/500.component'
+import { HomepageComponent } from './homepage/homepage.component'
+
 
 export const AUTH_ROUTES: Route[] = [
   {
     path: 'pages-login',
     component: LoginComponent,
     data: { title: 'Log In' },
+  },
+  {
+    path:'pages-homepage',
+    component: HomepageComponent,
+    data: {title: 'The Insider Trade'},
   },
   {
     path: 'pages-login-2',

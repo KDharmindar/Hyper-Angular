@@ -1,0 +1,149 @@
+<div class="container-fluid">
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg bg-light shadow-sm">
+      <a class="navbar-brand fw-bold text-primary" href="#">StockWatch</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <button class="btn btn-primary mx-2" routerLink="/login">Login</button>
+        <button class="btn btn-secondary" routerLink="/register">Register</button>
+      </div>
+    </div>
+  
+    <!-- Hero Section -->
+    <div class="row align-items-center bg-primary text-white p-4 rounded mb-4">
+      <div class="col-md-6">
+        <h1 class="fw-bold">Welcome to StockWatch</h1>
+        <p>Your one-stop platform for market analysis, stock performance, and real-time updates.</p>
+        <button class="btn btn-light fw-bold" routerLink="/register">Get Started</button>
+      </div>
+      <div class="col-md-6">
+        <img src="assets/hero-image.svg" alt="Market Overview" class="img-fluid">
+      </div>
+    </div>
+
+    <div class="row align-items-center bg-primary text-white p-4 rounded mb-4">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <app-news-slider></app-news-slider>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+      
+  
+
+
+    <!-- Market Overview -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-info text-white fw-bold">Global Market Overview</div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let market of marketOverview">
+                {{ market.name }}: <strong>{{ market.value }}</strong> 
+                <span [class.text-success]="market.change >= 0" [class.text-danger]="market.change < 0">
+                  ({{ market.change }}%)
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-light fw-bold">Sector Performance</div>
+          <div class="card-body">
+            <canvas id="sectorPerformanceChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Top Gainers and Losers -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-success text-white fw-bold">Top Gainers</div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th>% Change</th>
+                  <th>Amount Change</th>
+                  <th>Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let stock of topGainers">
+                  <td>{{ stock.ticker }}</td>
+                  <td>{{ stock.price }}</td>
+                  <td class="text-success">{{ stock.change_percentage }}</td>
+                  <td class="text-success">{{ stock.change_amount }}</td>
+                  <td class="text-success">{{ stock.volume }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-danger text-white fw-bold">Top Losers</div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th>% Change</th>
+                  <th>Amount Change</th>
+                  <th>Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let stock of topLosers">
+                    <td>{{ stock.ticker }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td class="text-success">{{ stock.change_percentage }}</td>
+                    <td class="text-success">{{ stock.change_amount }}</td>
+                    <td class="text-success">{{ stock.volume }}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- News and Market Sentiment -->
+    <div class="row my-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-light fw-bold">Latest News</div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let news of newsArticles">
+                <a [href]="news.url" target="_blank">{{ news.title }}</a> - 
+                <span>{{ news.overall_sentiment_label }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-light fw-bold">Market Sentiment</div>
+          <div class="card-body">
+            <h3 [class.text-success]="marketSentiment === 'Bullish'" 
+                [class.text-danger]="marketSentiment === 'Bearish'">
+              {{ marketSentiment }}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

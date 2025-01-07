@@ -112,6 +112,7 @@ import { MarketSentimentComponent } from '../components/news-sentiment-analysis/
 import { WatchlistAlertsComponent } from '../components/watchlist-alerts/watchlist-alerts.component'
 import { LoginComponent } from '../account/login/login.component'
 import { RegistrationComponent } from '../components/registration/registration.component'
+import { ChatComponent } from '../components/chat/chat.component'
 
 
 export const PAGE_ROUTES: Route[] = [
@@ -131,6 +132,11 @@ export const PAGE_ROUTES: Route[] = [
     path: 'real-time-stocks-prices',
     component: RealTimeStockPricesComponent,
     data: {title: 'Real Time Stocks Prices'},
+  },
+  {
+    path: 'chat',
+    component: ChatComponent,
+    data: {title: 'The Insider Trade Chat'},
   },
   {
     path: 'market-sentiment-analysis',
