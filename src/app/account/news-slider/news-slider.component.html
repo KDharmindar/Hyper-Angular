@@ -18,8 +18,8 @@
         class="carousel-item" 
         *ngFor="let news of newsArticles; let i = index" 
         [class.active]="i === 0">
-        <div class="d-flex align-items-center p-4 bg-primary text-white rounded">
-          <div class="w-50">
+        <div class="d-flex p-4 bg-primary text-white rounded">
+          <div>
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="fw-bold">{{ news.title }}</h2>
@@ -39,7 +39,7 @@
             
             
           </div>
-          <div class="w-50">
+          <div>
             <img [src]="news.banner_image || 'assets/default-news.jpg'" 
                  alt="{{ news.title }}" 
                  class="img-fluid rounded">
@@ -49,6 +49,7 @@
     </div>
   
     <!-- Controls -->
+   
     <button 
       class="carousel-control-prev" 
       href="#newsSlider" 
@@ -65,5 +66,8 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>   
-  </div>
+    
+   
+  
+</div>
   
