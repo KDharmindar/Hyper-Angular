@@ -3,13 +3,14 @@ import { AlphaVantageService } from '../../services/alpha-vantage.service';
 import { Chart } from 'chart.js';
 import { NgFor } from '@angular/common';
 import { NewsSliderComponent } from '../news-slider/news-slider.component';
+import { ServicesSectionComponent } from '../services-section/services-section.component';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss'],
   standalone:true,
-  imports:[NgFor, NewsSliderComponent],
+  imports:[NgFor, NewsSliderComponent, ServicesSectionComponent],
 })
 export class HomepageComponent implements OnInit {
   marketOverview: any[] = [];

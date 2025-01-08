@@ -5,7 +5,7 @@
     <!-- Navbar -->
     <div class="navbar navbar-expand-lg ">
         <a class="navbar-brand fw-bold text-primary" href="#">
-          <img src="../../../assets/images/Logo1.png" width="200px" />
+          <img src="../../../assets/images/Logo-cropped.png" width="200px" />
       </a>
         <div class="collapse navbar-collapse justify-content-end">
           <button class="btn btn-primary mx-2" routerLink="/pages-login-2">Login</button>
@@ -33,7 +33,7 @@
     
    --> 
 
-    <div class="row align-items-center bg-primary text-white p-4 rounded mb-4">
+    <div class="row align-items-center bg-primary text-white p-4 rounded">
         <div class="col-md-1">
         </div>
         <div class="col-md-10">
@@ -43,38 +43,18 @@
         </div>
     </div>
       
+    <div class="row align-items-center bg-primary text-white p-4 rounded mb-4">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <app-services-section></app-services-section>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
   
 
 
-    <!-- Market Overview -->
-    <!--
-    <div class="row mb-4">
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <div class="card-header bg-info text-white fw-bold">Global Market Overview</div>
-          <div class="card-body">
-            <ul class="list-group">
-              <li class="list-group-item" *ngFor="let market of marketOverview">
-                {{ market.name }}: <strong>{{ market.value }}</strong> 
-                <span [class.text-success]="market.change >= 0" [class.text-danger]="market.change < 0">
-                  ({{ market.change }}%)
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="card shadow-sm">
-          <div class="card-header bg-light fw-bold">Sector Performance</div>
-          <div class="card-body">
-            <canvas id="sectorPerformanceChart"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    -->
   
 
 
@@ -89,19 +69,19 @@
               <thead>
                 <tr>
                   <th>Stock</th>
-                  <th>Price</th>
-                  <th>% Change</th>
-                  <th>Amount Change</th>
-                  <th>Volume</th>
+                  <th style="text-align: right;">Price</th>
+                  <th style="text-align: right;">% Change</th>
+                  <th style="text-align: right;">Amount Change</th>
+                  <th style="text-align: right;">Volume</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let stock of topGainers">
                   <td>{{ stock.ticker }}</td>
-                  <td>{{ stock.price }}</td>
-                  <td class="text-success">{{ stock.change_percentage }}</td>
-                  <td class="text-success">{{ stock.change_amount }}</td>
-                  <td class="text-success">{{ stock.volume }}</td>
+                  <td style="text-align: right;">{{ stock.price }}</td>
+                  <td style="text-align: right;" class="text-success">{{ stock.change_percentage }}</td>
+                  <td style="text-align: right;" class="text-success">{{ stock.change_amount }}</td>
+                  <td style="text-align: right;" class="text-success">{{ stock.volume }}</td>
                 </tr>
               </tbody>
             </table>
@@ -116,20 +96,20 @@
               <thead>
                 <tr>
                   <th>Stock</th>
-                  <th>Price</th>
-                  <th>% Change</th>
-                  <th>Amount Change</th>
-                  <th>Volume</th>
+                  <th style="text-align: right;">Price</th>
+                  <th style="text-align: right;">% Change</th>
+                  <th style="text-align: right;">Amount Change</th>
+                  <th style="text-align: right;">Volume</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let stock of topLosers">
                     <td>{{ stock.ticker }}</td>
-                    <td>{{ stock.price }}</td>
-                    <td class="text-success">{{ stock.change_percentage }}</td>
-                    <td class="text-success">{{ stock.change_amount }}</td>
-                    <td class="text-success">{{ stock.volume }}</td>
-                  </tr>
+                    <td style="text-align: right;">{{ stock.price }}</td>
+                    <td style="text-align: right;" class="text-success">{{ stock.change_percentage }}</td>
+                    <td style="text-align: right;" class="text-success">{{ stock.change_amount }}</td>
+                    <td style="text-align: right;" class="text-success">{{ stock.volume }}</td>
+                    </tr>
               </tbody>
             </table>
           </div>
@@ -140,7 +120,8 @@
   
     <!-- News and Market Sentiment -->
     <div class="row my-4">
-      <div class="col-md-6">
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
         <div class="card shadow-sm">
           <div class="card-header bg-light fw-bold">Latest News</div>
           <div class="card-body">
@@ -153,7 +134,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <div class="card shadow-sm">
           <div class="card-header bg-light fw-bold">Market Sentiment</div>
           <div class="card-body">
@@ -164,6 +145,7 @@
           </div>
         </div>
       </div>
+      <div class="col-md-1"></div>
     </div>
   </div>
   
